@@ -1,0 +1,119 @@
+---
+import PlusIcon from "../icons/plus.svg";
+
+ //@ts-nocheck
+const faqData = await fetch(
+  "https://frontend-design-theme.netlify.app/api/faq"
+).then((response) => response.json());
+---
+
+<section class="FAQ-container">
+  <div>
+    {
+    faqData.faq.map((faq) => (
+      <details name="accordion">
+         <summary>
+    <span>
+      {faq.question}
+      <PlusIcon />
+    </span>
+  </summary>
+  <div class="answer">
+ <p>{faq.answer}</p>
+  </div>
+      </details>
+    ))
+  }
+  </div>
+</section>
+
+<style>
+   @layer components {
+  section {
+    padding-block: 3rem;
+    background: #f5f5f5;
+  }
+  
+  div {
+    padding: 1rlh;
+    max-width: 725px;
+    margin-inline: auto;
+  }
+
+  details {
+    color: hsl(190 30% 12%);
+    border-bottom: 1px solid #dadada;
+
+    /* Angiver at brugeren ikke har angivet nogen bevægelses/animations præferencer på sin enheden  */
+    @media (prefers-reduced-motion: no-preference) {
+      interpolate-size: allow-keywords; /* Aktiverer animation mellem to værdier (størrelsesændring) – understøttes IKKE i Safari og Firefox*/
+    }
+
+    /* Styling af content lukket */
+    &::details-content {
+      block-size: 0; /* Ingen højde */
+      overflow-y: clip;
+      transition: content-visibility 1s allow-discrete, block-size 1s; /* animation på synlighed på teksten og højden af containeren – begge tager 1 sekund */
+    }
+
+    /* Styling af content åben */
+    &[open]::details-content {
+      block-size: auto; /* Automatisk højde */
+    }
+
+    /* Styling af ikon åben */
+    &[open] {
+      --r: z 90deg; /* Animation af + til -  */
+    }
+    summary {
+      font-weight: 700;
+      color: #181818;
+      text-wrap: revert;
+      user-select: none;
+      cursor: pointer;
+
+      &::marker,
+      &::-webkit-details-marker {
+        content: "";
+        display: none;
+      }
+
+      span {
+        border: none;
+        text-align: start;
+        padding: 0;
+        inline-size: 100%;
+        padding-block: 1rlh;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+
+
+        svg {
+          inline-size: auto;
+          height: 1lh;
+          flex-shrink: 0;
+        }
+      }
+    }
+    
+
+    .answer {
+      color: #595566;
+      transition: height 0.3s ease, opacity 0.3s ease;
+
+      > * + * {
+        margin-top: 1em;
+      }
+
+      :last-child {
+        padding-block-end: 1rlh;
+      }
+
+      .link-block {
+        display: block;
+      }
+    }
+  }
+}
+</style>

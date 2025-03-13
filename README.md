@@ -17,3 +17,9 @@ const employeesData = await fetch(
 
 console.log(employeesData);
 ```
+
+## Mine reflektioner
+
+Reflekter kort men fagligt over din løsning med henblik på udfordringerne og successerne ved opgaven.
+Fremhæv specifikke kodestumper, der illustrerer brugen af forskellige teknikker og principper (gerne fra undervisningen).
+Forklar, hvordan du har organiseret din CSS; hvornår er det globalt, og hvornår er det komponent-specifikt.
