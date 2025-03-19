@@ -1,0 +1,42 @@
+---
+const { theme } = Astro.props;
+---
+
+<section class={theme}>
+    <slot></slot>
+</section>
+
+<style>
+    @layer global {
+    section {
+      grid-column: full;
+        display: grid;
+        grid-template-columns: subgrid;
+        > * {
+          grid-column: content;
+        }
+    }
+
+    .dark {
+        background-color: var(--color-primary03-black);
+
+        p, h1, h2, h6 {
+        color: var(--color-secondary02-white);
+        }
+    }
+
+    .grey {
+        background-color: var(--color-secondary01-grey);
+    }
+
+    .yellow {
+        background-color: var(--color-primary01-yellow);
+    }
+
+    .white {
+        p {
+        color: #595566;
+        }
+    }
+}
+</style>

@@ -1,0 +1,73 @@
+
+<footer>
+    <div class="footer_container">
+        <a href="index.html">AskExperts</a>
+        <hr>
+        <div class="footer_links">
+            <p>©2022 Consultalk. All rights reserved</p> 
+            <p> | </p> 
+            <p> <a href="#">Terms of Service</a></p> 
+            <p> | </p>
+            <p> <a href="#">Privacy Policy</a></p> 
+        </div>
+    </div>
+</footer>
+
+<style>
+     @layer components {
+    footer {
+        background-color: var(--color-primary03-black);
+        padding: 46px 0px;
+        grid-column: full;
+        display: grid;
+        grid-template-columns: subgrid;
+
+        .footer_container {
+            grid-column: content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            >:first-child {
+                text-decoration: none; 
+                color: var(--color-secondary02-white);
+                cursor: pointer;
+                 font-family: Cabin;
+                font-size: 30px;
+            }
+
+            hr {
+                color: #707070;;
+                height: 1px;
+                border-radius: 2px;
+                width: 100%;
+                margin: 0 auto;
+                margin-block: 36px;
+            }
+
+            .footer_links {
+                display: flex;
+                color: var(--color-secondary02-white);
+                 gap: 5px;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                    p {
+                    color: var(--color-secondary02-white);
+                    }
+
+                    a {
+                        color: var(--color-secondary02-white);
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        color: var(--color-primary01-yellow);
+                        font-weight: 600;
+                    }
+            }
+        }
+    }
+    } 
+</style>

@@ -3,16 +3,66 @@
 const servicesData = await fetch(
   "https://frontend-design-theme.netlify.app/api/services"
 ).then((response) => response.json());
+
+import Buttons from "./buttons.astro";
 ---
 
-<ul>
+<ul role="list">
   {
     servicesData.services.map((service) => (
       <li>
-        <h2>{service.title}</h2>
+        <h6>{service.title}</h6>
         <p>{service.description}</p>
-        <a href="#0">{service.buttonText}</a>
+        <Buttons variant="primary" href="#0">{service.buttonText}</Buttons>
       </li>
     ))
   }
 </ul>
+
+<style>
+  @layer components {
+    ul {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      container-type: inline-size;
+
+        ::before {
+        content: "";
+        position: absolute;
+        inset: 10% 0 0;
+        z-index: -1;
+    }
+    }
+
+       @media (width < 1000px) {
+    ul {
+     display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    }
+
+     @media (width < 600px) {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    }
+     li {
+      display: flex;
+      padding: 46px;
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      background: rgba(38, 38, 38, 0.90);
+      backdrop-filter: blur(16px);
+
+      .primary {
+        margin-block-start: var(--space-m);
+      }
+     }
+  }
+</style>

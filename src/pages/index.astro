@@ -1,12 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import FAQ from "../components/FAQ.astro";
+import Expect from "../components/Expect.astro"
+import ScrollingContainer from "../components/ScrollingContainer.astro";
+import Section from "../layouts/Section.astro";
+import Experience from "../components/Experience.astro";
+import CoreValues from "../components/CoreValues.astro"
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout>
-  <Hero />
-  <FAQ />
+  <Section theme="dark">
+        <Hero></Hero>
+  </Section>
+  <Section theme="white">
+        <Expect></Expect>
+  </Section>
+  <Section theme="grey">
+        <ScrollingContainer></ScrollingContainer>
+  </Section>
+  <Section theme="yellow">
+    <Experience></Experience>
+  </Section>
+  <Section theme="dark">
+    <CoreValues></CoreValues>
+  </Section>
+  <Section theme="white">
+    <Contact></Contact>
+  </Section>
 </Layout>
 
-<style></style>
+<style>
+</style>

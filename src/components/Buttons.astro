@@ -1,0 +1,48 @@
+---
+const { variant } = Astro.props; // Samler property op
+---
+
+<button class={variant}> <!-- Indsætter property som atribut -->
+  <slot />
+</button>
+
+<style>
+   @layer components {
+    .primary {
+        border-radius: 42px;
+        background: var(--color-primary03-black);
+        padding: 16px 33px;
+        color: var(--color-secondary02-white);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    .primary:hover {
+        border: 2px solid var(--color-primary03-black);
+        background: var(--color-secondary02-white);
+        color: var(--color-primary03-black);
+    }
+
+    .secondary {
+        border-radius: 42px;
+        background: var(--color-primary01-yellow);
+        padding: 16px 37px;
+    }
+
+     .secondary:hover { 
+        background: #FFE5A2;;
+    }
+
+    .tertiary {
+        border-radius: 42px;
+        background: var(--color-secondary02-white);
+        padding: 16px 37px;
+        border: 1px solid #EBEBEB;
+    }
+
+     .tertiary:hover { 
+        background: #ffffffba;
+    }
+    }
+</style>

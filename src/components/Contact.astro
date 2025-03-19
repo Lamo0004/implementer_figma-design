@@ -1,0 +1,112 @@
+---
+import Phone from "../icons/phone.svg";
+import Pin from "../icons/pin.svg";
+import Clock from "../icons/clock.svg";
+---
+
+<article>
+    <div>
+        <div>
+            <p class="label">Process</p>
+            <h2>Contact Us. It's Easy.</h2>
+            <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative.</p>
+        </div>
+        <div>
+            <div class="flex_information">
+                <Phone />
+                <div>
+                    <p>Call Today</p>
+                    <p class="information">+1 800 100 900</p>
+                </div>
+            </div>
+            <div class="flex_information">
+                <Clock />
+                <div>
+                    <p>Monday To Friday</p>
+                    <p class="information">9AM - 5PM</p>
+                </div>
+            </div>
+            <div class="flex_information">
+                <Pin />
+                <div>
+                    <p>USA Office</p>
+                    <p class="information">195 Devonshire St Boston, MA 02110</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="img_grid">
+        <img src="img/contact1.jpg" alt="">
+        <img src="img/contact2.jpg" alt="">
+        <img src="img/contact3.jpg" alt="">
+    </div>
+</article>
+
+<style>
+    @layer components {
+        article {
+            padding-block: var(--space-xl);
+            display: flex;
+
+            .label {
+            background-color: var(--color-primary01-yellow);
+            color: var(--color-primary03-black);
+            }
+
+             h2 {
+            margin-block: var(--space-xs);
+            }
+
+            .flex_information {
+            display: flex;
+            align-items: center; 
+            gap: 16px;
+            padding-block-start: var(--space-m);
+            }
+
+            .information {
+            color: var(--color-primary03-black);
+            font-family: "Cabin";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            }
+
+            .img_grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                margin-inline-start: var(--space-s);
+
+                :first-child {
+                    grid-row: 1/3;
+                }
+            }
+
+            img {
+            border-radius: 20px;
+            object-fit: cover;
+            }
+            }
+
+        @media (width < 1000px) {
+        article {
+            .img_grid {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            :first-child {
+                display: none;
+            }
+            }
+        }
+        }
+    
+         @media (width < 600px) {
+           article {
+            .img_grid {
+            display: none;
+        }
+     }
+    }
+</style>

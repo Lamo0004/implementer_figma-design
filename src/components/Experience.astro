@@ -1,0 +1,113 @@
+---
+//@ts-nocheck
+const experienceData = await fetch(
+  "https://frontend-design-theme.netlify.app/api/experience"
+).then((response) => response.json());
+---
+
+<div class="container">
+    <div>
+        <p class="label">Experience</p>
+        <h2>More than 25 years of experience</h2>
+        <p>3000+ our clients are insured around the World</p>
+    </div>
+    <div class="stats">
+        {
+            experienceData.stats.map((experience) => (
+                <div class="circle">
+                    <div class="stat" style={{ '--percent': `${experience.value}` }}></div>
+                    <h6>{experience.label}</h6>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+
+<style>
+.container {
+    padding-block: var(--space-3xl);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr 3fr;
+
+    h2 {
+        margin-block: var(--space-s);
+    }
+}
+
+ @media (width < 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        }
+    }
+
+.label {
+    background-color: var(--color-secondary02-white);
+}
+
+.stats {
+    display: flex;
+    gap: 1.5rem;
+
+     h6 {
+        text-align: center;
+        }
+}
+
+ @media (width < 600px) {
+    .stats {
+        flex-direction: column;
+        align-items: center; 
+    }
+    }
+
+
+.stat {
+    --p: calc(var(--percent) * 1%); /* Laver tallet fra HTML til procent */
+    --border-width: 5px;
+    --border-color: var(--color-secondary02-white);
+    aspect-ratio: 1;
+    width: 185px;
+    border-radius: calc(Infinity * 1px);
+    border: var(--border-width) solid #0000;
+    background: radial-gradient(
+                circle at 50% calc(var(--border-width) / 2),
+                var(--border-color) calc(var(--border-width) / 2),
+                transparent 0
+            )
+            border-box,
+        linear-gradient(var(--color-primary01-yellow), var(--color-primary01-yellow)) padding-box,
+        conic-gradient(var(--border-color) var(--p), #DAAE3C 0) border-box; /* Gradient som udfylder cirklen og medtager border */
+
+    display: grid;
+    counter-reset: count var(--percent);
+
+    &::before,
+    &::after {
+        grid-area: 1 / 1;
+    }
+
+    &::after {
+        content: counter(count) "%";
+        font-size: var(--heading-1);
+        font-weight: 700;
+        place-self: center;
+    }
+
+    &::before {
+        /* Prik */
+        content: "";
+        aspect-ratio: 1;
+        border-radius: calc(Infinity * 1px);
+        width: calc(
+            var(--border-width) * 3
+        ); /* Prikkens størrelse relaterer sig til stregens bredde – er 5 gange så stor */
+        background: black;
+        offset-path: border-box; /* Gør så det ligner prikken lægger på parents borderbox (stregen) */
+        offset-anchor: 50% calc(50% - var(--border-width) / 2); /* Retter prikken's placering på stregen til, så vi også tager højde for bredden på border */
+        offset-distance: var(--p); /* Længden prikken har flyttet sig */
+    }
+}
+</style>

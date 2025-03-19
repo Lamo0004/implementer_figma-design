@@ -1,1 +1,110 @@
 /* Globale styles her */
+:root {
+  --color-primary01-yellow: #ffcc4a;
+  --color-primary02-green: #4eaf4e;
+  --color-primary03-black: #181818;
+
+  --color-secondary01-grey: #f5f5f5;
+  --color-secondary02-white: #fff;
+
+  --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
+  --space-2xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
+  --space-xs: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+  --space-s: clamp(1rem, 1rem + 0vw, 1rem);
+  --space-m: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+  --space-l: clamp(2rem, 2rem + 0vw, 2rem);
+  --space-xl: clamp(3rem, 3rem + 0vw, 3rem);
+  --space-2xl: clamp(4rem, 4rem + 0vw, 4rem);
+  --space-3xl: clamp(6rem, 6rem + 0vw, 6rem);
+
+  --paragraph: 1rem; /* 16px */
+  --heading-7: clamp(1.125rem, 1.0227rem + 0.5114vw, 1.4063rem); /* 18px 22px */
+  --heading-6: clamp(1.2656rem, 1.1506rem + 0.5753vw, 1.582rem); /* 20px 25 px */
+  --heading-5: clamp(1.4238rem, 1.2944rem + 0.6472vw, 1.7798rem); /* 23px 30px */
+  --heading-4: clamp(1.802rem, 1.6382rem + 0.8191vw, 2.2525rem); /* 29px 35px */
+  --heading-3: clamp(2.0273rem, 1.843rem + 0.9215vw, 2.5341rem); /* 32px 40px */
+  --heading-2: clamp(2.2807rem, 2.0734rem + 1.0367vw, 2.8509rem); /* 36px 45px */
+  --heading-1: clamp(2.5658rem, 2.3325rem + 1.1663vw, 3.2072rem); /* 41px 50px */
+
+  --letter-spacing: 2.32px;
+
+  /* !!!!!!!SLETTE!!!!! */
+  --step--2: clamp(0.7901rem, 0.7183rem + 0.3591vw, 0.9877rem); /* 12px 16px – Skal jeg umiddelbart ikke bruge */
+  --step--1: clamp(0.8889rem, 0.8081rem + 0.404vw, 1.1111rem); /* 14px 18px – Skal jeg umiddelbart ikke bruge */
+  --step-4: clamp(1.6018rem, 1.4562rem + 0.7281vw, 2.0023rem); /* 25px 32px – Skal jeg umiddelbart ikke bruge */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+p {
+  color: var(--color-primary03-black);
+  line-height: 1.16;
+}
+
+p {
+  font-family: "Lato";
+  font-size: var(--paragraph);
+  line-height: 1.475;
+  font-weight: 400;
+  max-width: 65ch;
+}
+
+h1 {
+  font-size: var(--heading-1);
+}
+
+h2 {
+  font-size: var(--heading-2);
+}
+
+h3 {
+  font-size: var(--heading-3);
+}
+
+h4 {
+  font-size: var(--heading-4);
+}
+
+h5 {
+  font-size: var(--heading-5);
+}
+
+h6 {
+  font-size: var(--heading-6);
+}
+
+h7 {
+  font-size: var(--heading-7);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h6,
+h7 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+.label {
+  text-transform: uppercase;
+  border-radius: 20px;
+  justify-self: start;
+  padding-block: 0.2rem;
+  padding-inline: 1rem;
+  letter-spacing: var(--letter-spacing);
+  color: var(--color-primary03-black);
+}

@@ -1,0 +1,150 @@
+---
+import Buttons from "./Buttons.astro";
+---
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">AskExperts</a>
+        <ul role="list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Case Study</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+       <Buttons variant="secondary">Login</Buttons>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+
+<style>
+   @layer components {
+    header {
+        background: rgba(27, 27, 27, 0.90);
+        grid-column: full;
+        display: grid;
+        grid-template-columns: subgrid;
+
+        nav {
+            grid-column: content;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding-block: var(--space-s);
+
+            a {
+                text-decoration: none; 
+                color: var(--color-secondary02-white);
+                cursor: pointer;
+                }
+            
+            .logo {
+                font-family: Cabin;
+                font-size: 30px;
+                }
+
+            ul {
+                display: flex; 
+                gap: 0 3rem;
+                justify-content: space-between;
+                margin: 0; 
+                padding: 0; 
+
+                a:hover {
+                    color: var(--color-primary01-yellow);
+                    font-weight: 600;
+                }
+            }
+
+            .secondary {
+                padding: 4px 16px;
+            }
+        }
+    }
+}
+
+    .burger {
+      width: 30px; 
+      height: 20px; 
+      cursor: pointer; 
+      display: none;
+
+        > * {
+        width: 100%;
+        height: 2px;
+        margin-block: 5px;
+        background-color: var(--color-secondary02-white);
+        transition: 0.2s linear;
+        border-radius: 2px;
+        }
+    }
+
+   @media (max-width: 800px) {
+
+        nav {
+            display: grid;
+            grid-template-columns: 10fr 1fr 1fr;
+            gap: 1rem;
+        }
+    
+        nav ul {
+            display: none;
+        }
+
+        .burger {
+            display: block;
+        }
+        
+        .burger.active > div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); 
+        transition: 0.2s linear; 
+        }
+
+        .burger.active > div:nth-child(2) {
+        opacity: 0; 
+        transition: 0.15s linear; 
+        }
+
+        .burger.active > div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        transition: 0.2s linear;
+        }
+
+        nav.active ul {
+            display: block; 
+           background: #313131ea;
+           backdrop-filter: blur(2px);
+            position: absolute; 
+            top: 77px;
+            left: 0;
+            width: 100%; 
+
+            li {
+                text-align: center;
+                margin-block: 1rem;
+            }
+        }
+}
+
+</style>
+
+<script>
+const burger = document.querySelector(".burger"); 
+const nav = document.querySelector("nav"); 
+const links = document.querySelectorAll("li a"); 
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active"); 
+  nav.classList.toggle("active"); 
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active"); 
+    nav.classList.remove("active"); 
+  });
+});
+</script>

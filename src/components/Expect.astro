@@ -1,0 +1,76 @@
+---
+import Checkmark from "../icons/checkmark.svg";
+---
+<div class="expect_section">
+    <div>
+        <img src="img/expect.jpg" alt="">
+    </div>
+    <div>
+        <p class="label">We'll work with you</p>
+        <h2>What To Expect</h2>
+        <p>Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals.</p>
+        <ul>
+            <li>Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.</li>
+            <li>Identify opportunities to optimize processes and implement impactful solutions with measurable results.</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    @layer components {
+    :root {
+        --checkmark-icon: url('../icons/checkmark.svg');
+    }
+
+    .expect_section {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem;
+        padding-block-start: var(--space-3xl);
+        padding-block-end: var(--space-xl);
+
+        h2 {
+            margin-block: var(--space-s);
+        }
+    }
+
+    img {
+        border-radius: 20px;
+    }
+
+    .label {
+        background-color: var(--color-primary01-yellow);
+    }
+
+    ul {
+      display: grid;
+      gap: 1rem;
+      line-height: 1.5;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      font-size: 1rem;
+      color: #595566;
+    }
+
+    li::before {
+      content: '';
+      width: 1.6rem;
+      height: 1lh;
+      background: var(--checkmark-icon) 50% 50% / 100% auto no-repeat;
+      background-position: 50% 50%;
+      background-size: 100% auto;
+    }
+
+      @media (width < 1000px) {
+        .expect_section {
+        grid-template-columns: 1fr;
+        }
+        .label {
+            margin-block-start: var(--space-xs);
+        }
+    }}
+</style>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
 
 *,
 ::before,
@@ -12,7 +13,7 @@
 }
 
 html {
-  font-family: "Lato", sans-serif;
+  font-family: "Cabin";
   font-feature-settings: "pnum";
   font-variant-numeric: tabular-nums;
   -webkit-text-size-adjust: none;
@@ -103,6 +104,11 @@ svg,
 video,
 canvas {
   block-size: auto;
+}
+
+img {
+  width: auto;
+  height: 100%;
 }
 
 audio:not([controls]) {

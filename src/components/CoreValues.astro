@@ -1,0 +1,130 @@
+---
+import Buttons from "./Buttons.astro";
+import ArrowRight from "../icons/arrow--right.svg";
+ //@ts-nocheck
+const coreValuesData = await fetch(
+  "https://frontend-design-theme.netlify.app/api/coreValues"
+).then((response) => response.json());
+---
+<article>
+<div>
+    {
+    <p class="label">Growing with our clients</p>
+    <h2>{coreValuesData.title}</h2>
+    <p>{coreValuesData.subtitle}</p>
+    }
+  </div>
+<Buttons variant="tertiary">Get in touch</Buttons>
+</article>
+<ul role="list">
+  {
+    coreValuesData.values.map(async (coreValues) => {
+        const Icon = await import(`../icons/${coreValues.icon}.svg`).then(
+          (module) => module.default
+        );
+      return (
+      <li>
+        <div class="icon_container">
+        <Icon class="icon"/>
+        </div>
+        <h6>{coreValues.title}</h6>
+        <p>{coreValues.description}</p>
+        <a href="#0">{coreValues.link.text} <ArrowRight /></a>
+      </li>
+      );
+    })
+  }
+</ul>
+
+  <style>
+    @layer components {
+    article {
+        padding-block-start: var(--space-2xl);
+        display: flex;
+        justify-content: space-between;
+
+        :last-child {
+            place-self: end end;
+        }
+
+        h2 {
+        margin-block: var(--space-s);
+        }
+
+        .label {
+            background-color: var(--color-primary01-yellow);
+            color: var(--color-primary03-black);
+        }
+        }
+
+    ul {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding-block-start: var(--space-m);
+    padding-block-end: var(--space-2xl);
+
+      li {
+        border-radius: 20px;
+        padding: 36px 23px;
+        border: 1px solid #EAEAEA;
+        background: var(--color-secondary01-grey);
+
+        p {
+            color: #595566;
+        }
+
+        h6 {
+            color: var(--color-primary03-black);
+            margin-block: var(--space-s);
+        }
+
+        .icon_container {
+            background-color: var(--color-primary03-black);
+            place-self: start;
+            padding: 0.4rem;
+            border-radius: calc(Infinity * 1px);
+        }
+
+        .icon {
+            color: var(--color-secondary01-grey);
+            padding: 0.2rem;
+        }
+
+        a {
+            display: flex;
+            color: var(--color-primary03-black);
+            font-size: 18px;
+            gap: 10px;
+            cursor: pointer;
+            margin-block-start: var(--space-s);
+        }
+
+        a:hover {
+                color: var(--color-primary01-yellow);
+            }
+      }
+    }
+      @media (width < 1000px) {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    article {
+        flex-direction: column;
+
+         :last-child {
+            place-self: start start;
+            margin-block-start: var(--space-m);
+        }
+    }
+    }
+
+     @media (width < 600px) {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+} 
+}
+  </style>
