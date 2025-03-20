@@ -1,0 +1,67 @@
+---
+import Buttons from "./Buttons.astro"
+---
+<article>
+    <div>
+        <h4>Subscribe Our Newsletter</h4>
+        <p>Build stronger Customer Relationships with Consultalk</p>
+    </div>
+    <div class="input_container">
+    <input type="text" name="email" placeholder="your mail address">
+    <Buttons variant="secondary">Subscribe</Buttons>
+    </div>
+</article>
+
+<style>
+    @layer components { 
+        article {
+            background-color: var(--color-primary03-black);
+            margin-block: var(--space-2xl);;
+            padding: var(--space-2xl);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            h4, p {
+                color: var(--color-secondary02-white);
+            }
+
+            h4 {
+                margin-block-end: var(--space-xs);
+            }
+
+            input {
+                border-radius: 42px;
+                background-color: var(--color-secondary02-white);
+                padding: 16px 37px;
+            }
+
+            .secondary {
+                margin: var(--space-xs);
+            }
+        }
+
+        @media (width < 1000px) {
+        article {
+        flex-direction: column;
+        padding: var(--space-xl);
+        }
+        }
+
+        @media (width < 600px) {
+        article {
+        .input_container {
+            margin-block-start: var(--space-s);
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .secondary {
+                margin: 0;
+            }
+        }
+        }
+    }
+</style>

@@ -1,17 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
 import Expect from "../components/Expect.astro"
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import Section from "../layouts/Section.astro";
 import Experience from "../components/Experience.astro";
 import CoreValues from "../components/CoreValues.astro"
 import Contact from "../components/Contact.astro";
+import Newsletter from "../components/Newsletter.astro";
 ---
 
 <Layout>
   <Section theme="dark">
         <Hero></Hero>
+  </Section>
+  <Section>
+        <Services></Services>
   </Section>
   <Section theme="white">
         <Expect></Expect>
@@ -23,10 +28,13 @@ import Contact from "../components/Contact.astro";
     <Experience></Experience>
   </Section>
   <Section theme="dark">
-    <CoreValues></CoreValues>
+    <CoreValues  btnVariant="tertiary"></CoreValues>
   </Section>
   <Section theme="white">
     <Contact></Contact>
+  </Section>
+  <Section>
+    <Newsletter></Newsletter>
   </Section>
 </Layout>
 

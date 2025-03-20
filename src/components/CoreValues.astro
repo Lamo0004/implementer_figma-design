@@ -5,6 +5,7 @@ import ArrowRight from "../icons/arrow--right.svg";
 const coreValuesData = await fetch(
   "https://frontend-design-theme.netlify.app/api/coreValues"
 ).then((response) => response.json());
+const {btnVariant = "primary"} = Astro.props;
 ---
 <article>
 <div>
@@ -14,7 +15,7 @@ const coreValuesData = await fetch(
     <p>{coreValuesData.subtitle}</p>
     }
   </div>
-<Buttons variant="tertiary">Get in touch</Buttons>
+<Buttons variant={btnVariant}>Get in touch</Buttons>
 </article>
 <ul role="list">
   {
@@ -68,7 +69,6 @@ const coreValuesData = await fetch(
         border-radius: 20px;
         padding: 36px 23px;
         border: 1px solid #EAEAEA;
-        background: var(--color-secondary01-grey);
 
         p {
             color: #595566;

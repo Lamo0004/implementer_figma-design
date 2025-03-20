@@ -13,21 +13,27 @@ import Clock from "../icons/clock.svg";
         </div>
         <div>
             <div class="flex_information">
-                <Phone />
+                <div class="phone_icon_container">
+                    <Phone class="phone_icon"/>
+                </div>
                 <div>
                     <p>Call Today</p>
                     <p class="information">+1 800 100 900</p>
                 </div>
             </div>
             <div class="flex_information">
-                <Clock />
+                <div class="clock_icon_container">
+                    <Clock class="clock_icon" />
+                </div>
                 <div>
                     <p>Monday To Friday</p>
                     <p class="information">9AM - 5PM</p>
                 </div>
             </div>
             <div class="flex_information">
-                <Pin />
+                <div class="pin_icon_container">
+                    <Pin class="pin_icon" />
+                </div>
                 <div>
                     <p>USA Office</p>
                     <p class="information">195 Devonshire St Boston, MA 02110</p>
@@ -63,7 +69,38 @@ import Clock from "../icons/clock.svg";
             gap: 16px;
             padding-block-start: var(--space-m);
             }
+            .phone_icon_container {
+            background-color:#FFECBB;
+            place-self: start;
+            padding: 0.4rem;
+            border-radius: calc(Infinity * 1px);
 
+                .phone_icon {
+                color: #DEAA27;
+                padding: 0.2rem;
+            }
+            }
+
+            .clock_icon_container {
+            background-color: #A4EDA4;
+            place-self: start;
+            padding: 0.4rem;
+            border-radius: calc(Infinity * 1px);
+                .clock_icon {
+                color:#4EAF4E;
+                padding: 0.2rem;
+            }
+            }
+
+            .pin_icon_container {
+            background-color: #EAEAEA;
+            place-self: start;
+            padding: 0.4rem;
+            border-radius: calc(Infinity * 1px);
+                .pin_icon {
+                padding: 0.2rem;
+            }
+            }
             .information {
             color: var(--color-primary03-black);
             font-family: "Cabin";
@@ -107,6 +144,7 @@ import Clock from "../icons/clock.svg";
             .img_grid {
             display: none;
         }
-     }
+        }
+        }
     }
 </style>

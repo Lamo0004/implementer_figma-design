@@ -1,0 +1,105 @@
+---
+---
+
+<div class="grid">
+    <div>
+    <p class="label">Our vision</p>
+    <h2>Turn your ideas into reality.</h2>
+    <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+    <ul>
+        <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
+        <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
+    </ul>
+    </div>
+    <img src="/img/ourVision.jpg" alt="">
+</div>
+<div class="number_container">
+    <div>
+        <h1>1128+</h1>
+        <p>Successful Work</p>
+    </div>
+    <div>
+        <h1>908+</h1>
+        <p>Team member</p>
+    </div>
+    <div>
+        <h1>258+</h1>
+        <p>Happy Customers</p>
+    </div>
+    <div>
+        <h1>564+</h1>
+        <p>Creative Idea</p>
+    </div>
+</div>
+
+<style>
+   @layer components {
+     :root {
+        --checkmark-icon: url('../icons/checkmark.svg');
+    }
+
+    .grid {
+        margin-block-start: var(--space-3xl);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+
+        .label {
+        background-color: var(--color-primary02-green);
+        color: var(--color-secondary02-white);
+        }
+
+        h2 {
+           margin-block: var(--space-xs); 
+        }
+
+        img {
+        border-radius: 20px;
+        object-fit: cover;
+        }
+
+        li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        font-size: 1rem;
+        color: #595566;
+        }
+
+        li::before {
+        content: '';
+        width: 1.6rem;
+        height: 1lh;
+        background: var(--checkmark-icon) 50% 50% / 100% auto no-repeat;
+        background-position: 50% 50%;
+        background-size: 100% auto;
+        }
+        }
+
+    .number_container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-block: var(--space-3xl);
+
+            p {
+                color: var(--color-primary03-black);
+            }
+    }
+
+     @media (width < 600px) {
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .number_container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            place-self: center center;
+        }
+    }
+
+    }
+</style>

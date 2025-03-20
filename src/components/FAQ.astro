@@ -7,6 +7,11 @@ const faqData = await fetch(
 ).then((response) => response.json());
 ---
 
+<article>
+  <div class="overskrift_container">
+    <p class="label">faq</p>
+    <h2>Customer Questions</h2>
+  </div>
 <section class="FAQ-container">
   <div>
     {
@@ -26,16 +31,30 @@ const faqData = await fetch(
   }
   </div>
 </section>
+</article>
 
 <style>
    @layer components {
+    article {
+      padding-block-start: var(--space-3xl);
+       background: #f5f5f5;
+       border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+
+        .overskrift_container {
+        .label  {
+          background-color: var(--color-primary02-green);
+          color: var(--color-secondary02-white);
+          } 
+      }
+    }
   section {
-    padding-block: 3rem;
-    background: #f5f5f5;
+    padding-block-start: var(--space-m);
+    padding-block-end: var(--space-3xl);
   }
   
   div {
-    padding-block: 1rlh;
     max-width: 725px;
     margin-inline: auto;
   }
