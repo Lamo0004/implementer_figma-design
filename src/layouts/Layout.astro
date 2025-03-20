@@ -27,7 +27,7 @@ import Footer from "../components/Footer.astro";
   @layer global {
   body {
     display: grid;
-    grid-template-columns: [full-start] 1fr [content-start] minmax(0, 1000px) [content-end] 1fr [full-end];
+    grid-template-columns: [full-start] 1fr [content-start] minmax(0, var(--content-width)) [content-end] 1fr [full-end];
 
     }
 

@@ -7,19 +7,18 @@
   --color-secondary01-grey: #f5f5f5;
   --color-secondary02-white: #fff;
 
-  --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
-  --space-2xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
-  --space-xs: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
-  --space-s: clamp(1rem, 1rem + 0vw, 1rem);
-  --space-m: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
-  --space-l: clamp(2rem, 2rem + 0vw, 2rem);
-  --space-xl: clamp(3rem, 3rem + 0vw, 3rem);
-  --space-2xl: clamp(4rem, 4rem + 0vw, 4rem);
-  --space-3xl: clamp(6rem, 6rem + 0vw, 6rem);
+  --space-3xs: clamp(0.25rem, 0.2273rem + 0.1136vw, 0.3125rem); /* 0.25rem 0.3125rem */
+  --space-2xs: clamp(0.5rem, 0.4545rem + 0.2273vw, 0.625rem); /* 0.5rem 0.625rem – gap:10px */
+  --space-xs: clamp(0.75rem, 0.6818rem + 0.3409vw, 0.9375rem); /* 0.75rem 0.9375rem */
+  --space-s: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem); /* 1rem 1.25rem - gap: 16px + 1rem*/
+  --space-m: clamp(1.5rem, 1.3636rem + 0.6818vw, 1.875rem); /* 1.5rem 1.875rem - gap:30px*/
+  --space-l: clamp(2rem, 1.8182rem + 0.9091vw, 2.5rem); /* 2rem 2.5rem */
+  --space-xl: clamp(3rem, 2.7273rem + 1.3636vw, 3.75rem); /* 3rem 3.75rem – gap: 50px*/
+  --space-2xl: clamp(4rem, 3.6364rem + 1.8182vw, 5rem); /* 4rem 5rem */
+  --space-3xl: clamp(6rem, 5.4545rem + 2.7273vw, 7.5rem); /* 6rem 7.5rem */
 
   --paragraph: 1rem; /* 16px */
-  --heading-7: clamp(1.125rem, 1.0227rem + 0.5114vw, 1.4063rem); /* 18px 22px */
-  --heading-6: clamp(1.2656rem, 1.1506rem + 0.5753vw, 1.582rem); /* 20px 25 px */
+  --heading-6: clamp(1.2656rem, 1.1506rem + 0.5753vw, 1.582rem); /* 20px 25px */
   --heading-5: clamp(1.4238rem, 1.2944rem + 0.6472vw, 1.7798rem); /* 23px 30px */
   --heading-4: clamp(1.802rem, 1.6382rem + 0.8191vw, 2.2525rem); /* 29px 35px */
   --heading-3: clamp(2.0273rem, 1.843rem + 0.9215vw, 2.5341rem); /* 32px 40px */
@@ -28,10 +27,7 @@
 
   --letter-spacing: 2.32px;
 
-  /* !!!!!!!SLETTE!!!!! */
-  --step--2: clamp(0.7901rem, 0.7183rem + 0.3591vw, 0.9877rem); /* 12px 16px – Skal jeg umiddelbart ikke bruge */
-  --step--1: clamp(0.8889rem, 0.8081rem + 0.404vw, 1.1111rem); /* 14px 18px – Skal jeg umiddelbart ikke bruge */
-  --step-4: clamp(1.6018rem, 1.4562rem + 0.7281vw, 2.0023rem); /* 25px 32px – Skal jeg umiddelbart ikke bruge */
+  --content-width: 1000px;
 }
 
 h1,
@@ -40,9 +36,7 @@ h3,
 h4,
 h5,
 h6,
-h7,
 p {
-  color: var(--color-primary03-black);
   line-height: 1.16;
 }
 
@@ -54,7 +48,8 @@ p {
   max-width: 65ch;
 }
 
-h1 {
+h1,
+dt {
   font-size: var(--heading-1);
 }
 
@@ -78,25 +73,22 @@ h6 {
   font-size: var(--heading-6);
 }
 
-h7 {
-  font-size: var(--heading-7);
-}
-
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+dt {
   font-weight: 700;
 }
 
-h6,
-h7 {
+h6 {
   font-weight: 600;
 }
 
 a {
   text-decoration: none;
+  color: var(--color-primary03-black);
 }
 
 .label {

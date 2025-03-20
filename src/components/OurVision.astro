@@ -13,36 +13,36 @@
     </div>
     <img src="/img/ourVision.jpg" alt="">
 </div>
-<div class="number_container">
+<dl>
     <div>
-        <h1>1128+</h1>
-        <p>Successful Work</p>
+        <dt>1128+</dt>
+        <dd>Successful Work</dd>
     </div>
     <div>
-        <h1>908+</h1>
-        <p>Team member</p>
+        <dt>908+</dt>
+        <dd>Team member</dd>
     </div>
     <div>
-        <h1>258+</h1>
-        <p>Happy Customers</p>
+        <dt>258+</dt>
+        <dd>Happy Customers</dd>
     </div>
     <div>
-        <h1>564+</h1>
-        <p>Creative Idea</p>
+        <dt>564+</dt>
+        <dd>Creative Idea</dd>
     </div>
-</div>
+</dl>
 
 <style>
    @layer components {
      :root {
-        --checkmark-icon: url('../icons/checkmark.svg');
+        --checkmark-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="%234EAF4E" d="M176.49 95.51a12 12 0 0 1 0 17l-56 56a12 12 0 0 1-17 0l-24-24a12 12 0 1 1 17-17L112 143l47.51-47.52a12 12 0 0 1 16.98.03M236 128A108 108 0 1 1 128 20a108.12 108.12 0 0 1 108 108m-24 0a84 84 0 1 0-84 84a84.09 84.09 0 0 0 84-84"/></svg>');;
     }
 
     .grid {
         margin-block-start: var(--space-3xl);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 50px;
+        gap: var(--space-xl);
 
         .label {
         background-color: var(--color-primary02-green);
@@ -61,7 +61,7 @@
         li {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 1rem;
+        gap: var(--space-s);
         font-size: 1rem;
         color: #595566;
         }
@@ -76,27 +76,23 @@
         }
         }
 
-    .number_container {
+    dl {
         display: flex;
         justify-content: space-evenly;
         margin-block: var(--space-3xl);
-
-            p {
-                color: var(--color-primary03-black);
-            }
     }
 
      @media (width < 600px) {
         .grid {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: var(--space-s);
         }
 
-        .number_container {
+        dl {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: var(--space-m);
             place-self: center center;
         }
     }

@@ -40,25 +40,33 @@ import Newsletter from "../components/Newsletter.astro";
         grid-template-rows: 1fr;
         display: flex;
     }
-    .label {
-        background-color: var(--color-primary01-yellow);
-    }
     img {
         grid-column: full;
         grid-row: 1/2;
         object-fit: cover;
     }
     .hero_overlay {
-        max-width: 700px; /*Skal egentlig fjernes, så jeg har ændret placeringen til start både på overlay boksen og label */
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: start;
+        gap: var(--space-s);
         margin-block: var(--space-3xl);
-        border-radius: 29px;
+        margin-inline-end: calc(var(--space-3xl) * 2);
+        border-radius: 30px;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(5.5px);
         grid-row: 1/2;
         padding: var(--space-xl);
+
+        .label {
+        background-color: var(--color-primary01-yellow);
+        }
+    }
+
+    @media (width < 600px) {
+    .hero_overlay {
+        margin-inline-end: 0rem;
+    }
     }
 }
 </style>

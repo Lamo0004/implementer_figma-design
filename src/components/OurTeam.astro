@@ -1,4 +1,7 @@
 ---
+import Instagram from "../icons/instagram.svg";
+import Facebook from "../icons/facebook.svg";
+import Twitter from "../icons/twitter.svg";
 
 ---
 <article>
@@ -8,7 +11,36 @@
     <p>Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction, and promotes mutual respect among all team members.</p>
 </div>
 <div class="team">
-
+    <div>
+        <img src="../img/sarah.png" alt="">
+        <h5>Sarah Jasmine</h5>
+        <p>Driving innovation and leadership with a focus on strategic growth and impactful decisions.</p>
+        <div class="social_icons">
+            <Instagram></Instagram>
+            <Facebook></Facebook>
+            <Twitter></Twitter>
+        </div>
+    </div>
+    <div>
+        <img src="../img/john.png" alt="">
+        <h5>John Carter</h5>
+        <p>Expert in operational efficiency, ensuring smooth processes and exceptional team performance.</p>
+        <div class="social_icons">
+            <Instagram></Instagram>
+            <Facebook></Facebook>
+            <Twitter></Twitter>
+        </div>
+    </div>
+     <div>
+        <img src="../img/daisy.png" alt="">
+        <h5>Daisy Stella</h5>
+        <p>Inspiring creative solutions and forward-thinking approaches for groundbreaking projects.</p>
+        <div class="social_icons">
+            <Instagram></Instagram>
+            <Facebook></Facebook>
+            <Twitter></Twitter>
+        </div>
+    </div>
 </div>
 </article>
 
@@ -16,12 +48,43 @@
 <style>
     @layer components {
         article {
-        margin-block: var(--space-2xl);
+        padding-block: var(--space-2xl);
         }
 
         .label {
         background-color: var(--color-primary01-yellow);
         color: var(--color-primary03-black);
+        }
+
+        .team {
+            display: flex;
+            margin-block-start: var(--space-l);
+            gap: var(--space-m);
+            align-items: center;
+
+            > div {
+            display: flex;
+            gap: var(--space-s);
+            flex-direction: column; 
+            align-items: center; 
+
+
+             img {
+            border-radius: 30px;
+            object-fit: cover;
+            }
+
+            p {
+                text-align: center;
+                margin-block-end: var(--space-2xs);
+            }
+
+            .social_icons {
+                display: flex;
+                gap: var(--space-m);
+            }
+
+            }
         }
     }
 </style>

@@ -60,7 +60,7 @@ const {btnVariant = "primary"} = Astro.props;
 
     ul {
     display: flex;
-    gap: 30px;
+    gap: var(--space-m);
     align-items: flex-start;
     padding-block-start: var(--space-m);
     padding-block-end: var(--space-2xl);
@@ -95,7 +95,7 @@ const {btnVariant = "primary"} = Astro.props;
             display: flex;
             color: var(--color-primary03-black);
             font-size: 18px;
-            gap: 10px;
+            gap: var(--space-2xs);
             cursor: pointer;
             margin-block-start: var(--space-s);
         }

@@ -20,9 +20,9 @@ import Buttons from "./Buttons.astro";
     grid-column: full;
     display: grid;
     grid-template-columns: 1.5fr 2fr;
-    gap: 1rem;
+    gap: var(--space-s);
 
-    padding-inline-start: max(1rem, 50% - 1000px / 2);
+    padding-inline-start: max(1rem, 50% - var(--content-width) / 2);
 
     .text {
       margin-block: var(--space-2xl);

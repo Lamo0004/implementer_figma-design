@@ -12,7 +12,7 @@ const faqData = await fetch(
     <p class="label">faq</p>
     <h2>Customer Questions</h2>
   </div>
-<section class="FAQ-container">
+<section>
   <div>
     {
     faqData.faq.map((faq) => (
@@ -37,12 +37,14 @@ const faqData = await fetch(
    @layer components {
     article {
       padding-block-start: var(--space-3xl);
-       background: #f5f5f5;
-       border-radius: 30px;
-        display: flex;
-        flex-direction: column;
+      background: #f5f5f5;
+      border-radius: 30px;
 
         .overskrift_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
         .label  {
           background-color: var(--color-primary02-green);
           color: var(--color-secondary02-white);
@@ -52,12 +54,13 @@ const faqData = await fetch(
   section {
     padding-block-start: var(--space-m);
     padding-block-end: var(--space-3xl);
-  }
-  
-  div {
+
+    div {
     max-width: 725px;
     margin-inline: auto;
   }
+  }
+  
 
   details {
     color: hsl(190 30% 12%);
@@ -104,7 +107,7 @@ const faqData = await fetch(
         inline-size: 100%;
         padding-block: 1rlh;
         display: flex;
-        gap: 1rem;
+        gap: var(--space-s);
         justify-content: space-between;
 
 
