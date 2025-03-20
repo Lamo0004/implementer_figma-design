@@ -1,10 +1,11 @@
 ---
+import Buttons from "./Buttons.astro";
+
 //@ts-nocheck
 const servicesData = await fetch(
   "https://frontend-design-theme.netlify.app/api/services"
 ).then((response) => response.json());
 
-import Buttons from "./buttons.astro";
 ---
 
 <ul role="list">
